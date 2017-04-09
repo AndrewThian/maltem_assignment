@@ -19,7 +19,7 @@ There were some deviations from the actual brief in terms of implementation, I u
 #### Modules
 [request](https://www.npmjs.com/package/request) - http client to query API.
 [express](https://www.npmjs.com/package/express) - web framework
-[dotenv](https://www.npmjs.com/package/dotenv) - loads environment variables
+[dotenv](https://www.npmjs.com/package/dotenv) - loads environment variables 
 [mocah, chai, supertest](https://mochajs.org/) - for testing!
 
 #### License
