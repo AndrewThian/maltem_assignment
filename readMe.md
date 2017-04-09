@@ -20,7 +20,8 @@ There were some deviations from the actual brief in terms of implementation, I u
 * [request](https://www.npmjs.com/package/request) - http client to query API.
 * [express](https://www.npmjs.com/package/express) - web framework
 * [dotenv](https://www.npmjs.com/package/dotenv) - loads environment variables
-* [mocah, chai, supertest](https://mochajs.org/) - for testing!
+* [mocha, chai, supertest](https://mochajs.org/) - for testing!
+* [config](https://github.com/lorenwest/node-config/wiki/Configuration-Files) - for configuring environments
 
 #### License
 Yandex Translate terms of service: http://legal.yandex.com/translate_api/
