@@ -19,12 +19,12 @@ There were some deviations from the actual brief in terms of implementation, I u
 **EDIT**
 managed to use `config` to load my environment variables! Updated with config file consisting of test, dev, production environments.
 
-#### Modules
+## Modules
 * [request](https://www.npmjs.com/package/request) - http client to query API.
 * [express](https://www.npmjs.com/package/express) - web framework
 * [dotenv](https://www.npmjs.com/package/dotenv) - loads environment variables
 * [mocha, chai, supertest](https://mochajs.org/) - for testing!
 * [config](https://github.com/lorenwest/node-config/wiki/Configuration-Files) - for configuring environments
 
-#### License
+## License
 Yandex Translate terms of service: http://legal.yandex.com/translate_api/
