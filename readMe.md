@@ -13,7 +13,7 @@ cd into `public` folder:
 1. open index.html  
 2. profit!!!! translate awayyyyyy
 
-#### Comments
+## Comments
 There were some deviations from the actual brief in terms of implementation, I used `.expect` instead of `.should` as I was more familiar with `.expect`. I also didn't use `config` to manage my environments but simply used NODE_ENV as I did not have enough time to persue the documentations. If given a little more time, I would definitely refactor these discrepancies. With that said, hopefully my comments and code are up to par with the requirements.
 
 **EDIT**
