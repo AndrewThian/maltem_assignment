@@ -1,0 +1,25 @@
+{
+  "name": "maltem_challenge",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "NODE_ENV=dev nodemon app.js",
+    "test": "NODE_ENV=test mocha",
+    "start": "node app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "chai": "^3.5.0",
+    "colors": "^1.1.2",
+    "cors": "^2.8.3",
+    "dotenv": "^4.0.0",
+    "express": "^4.15.2",
+    "mocha": "^3.2.0",
+    "mongoose": "^4.9.3",
+    "request": "^2.81.0",
+    "supertest": "^3.0.0"
+  }
+}

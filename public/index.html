@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="./style.css">
+  <script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+  <title>Document</title>
+</head>
+<body>
+  <p>Source</p>
+  <textarea id="source" class="bx">
+  </textarea>
+  <select name="to" id="lang">
+    <option value="es">spanish</option>
+    <option value="nl">dutch</option>
+    <option value="en" selected="selected">english</option>
+    <option value="fr">french</option>
+    <option value="th">thai</option>
+    <option value="zh">chinese</option>
+  </select>
+  <button id="translate">Translate</button>
+  <p>json</p>
+  <div id="json" class="bx"></div>
+  <p>Output</p>
+  <div id="output" class="bx"></div>
+
+  <script src="./index.js" charset="utf-8"></script>
+</body>
+</html>

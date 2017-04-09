@@ -1,0 +1,12 @@
+html {
+	font: 0.75em/1.5em Arial, "Helvetica CY", "Nimbus Sans L", sans-serif;
+}
+.bx {
+  width: 100%;
+  display: block;
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px dashed #000;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
