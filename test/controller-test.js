@@ -1,9 +1,10 @@
-/* globals describe it */
+/* globals describe it after */
 require('colors')
 require('dotenv').config({silent: true})
 const expect = require('chai').expect
 const request = require('supertest')
-const app = require('../app')
+const app = require('../app').app
+const server = require('../app').server
 const requestModule = require('request')
 const Translation = require('../server/models/translation.js')
 
@@ -28,6 +29,11 @@ let outputTest = {
 let wrongOutput = 'Wrong output'
 
 describe('CONTROLLER TEST SUITE', () => {
+  after((done) => {
+    server.close()
+    done()
+  })
+
   describe('Test: Clear test database', () => {
     it('should clear database for test env', (done) => {
       Translation.remove({}, (err, translations) => {
@@ -174,7 +180,7 @@ describe('CONTROLLER TEST SUITE', () => {
 
   describe('TEST translate route', () => {
     // testing if route returns an object from the database
-    it('should return a json object', (done) => {
+    it('should call API if not in database', (done) => {
       request(app).post(`/translation/${inputTest.lang}/${inputTest.text}`)
       .end((err, res) => {
         if (err) return console.log(err.toString().red)

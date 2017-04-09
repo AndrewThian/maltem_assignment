@@ -5,27 +5,27 @@ const express = require('express')
 const app = express()
 const cors = require('cors')
 
-let PORT = 3000
 const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
 const translationRoutes = require('./server/routes/translations')
 
+// define port
+let PORT = 8888 || process.env.PORT
+
 // connect to mongoose (test or dev)
 const config = require('config')
-
-console.log(config.get('test.database'))
 if (process.env.NODE_ENV === 'test') {
   mongoose.connect(config.get('test.database'))
   console.log('CONNECTING TO TEST SERVER...'.blue)
-  PORT = 'test.port'
+  PORT = config.get('test.port')
 } else if (process.env.NODE_ENV === 'dev') {
   mongoose.connect(config.get('dev.database'))
   console.log('CONNECTING TO DEV SERVER...'.blue)
-  PORT = 'dev.port'
+  PORT = config.get('dev.port')
 } else if (process.env.NODE_ENV === 'production') {
   mongoose.connect(process.env.MONGODB_URI || config.get('production.database'))
   console.log('CONNECTING TO PRODUCTION SERVER...'.blue)
-  PORT = 'production.port'
+  PORT = config.get('production.port')
 }
 mongoose.Promise = global.Promise
 
@@ -42,6 +42,9 @@ app.get('/', (req, res) => {
            'post: /translation/new to add new translations into the database')
 })
 
-app.listen(PORT, () => console.log(`Port ${PORT} listening...`))
+let server = app.listen(PORT, () => console.log(`Port ${PORT} listening...`))
 
-module.exports = app
+module.exports = {
+  app: app,
+  server: server
+}

@@ -1,0 +1,6 @@
+{
+  "test": {
+    "port": 3030,
+    "database": "mongodb://localhost/translate-test"
+  }
+}

@@ -5,7 +5,7 @@ Created a backend with a simple model-controller, frontend with jQuery and AJAX 
 1. run `npm install`
 2. Create a .env file and input `API_KEY=yourAPIkeyhere`
 3. run `npm test` for testing environment
-4. run `mongod` and `mongo`
+4. run `mongod`
 5. run `npm run dev` for development environment
 
 cd into `public` folder:
