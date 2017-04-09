@@ -5,21 +5,27 @@ const express = require('express')
 const app = express()
 const cors = require('cors')
 
-const PORT = process.env.PORT || 3000
+let PORT = 3000
 const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
 const translationRoutes = require('./server/routes/translations')
 
 // connect to mongoose (test or dev)
+const config = require('config')
+
+console.log(config.get('test.database'))
 if (process.env.NODE_ENV === 'test') {
-  mongoose.connect('mongodb://localhost/translate-test')
+  mongoose.connect(config.get('test.database'))
   console.log('CONNECTING TO TEST SERVER...'.blue)
+  PORT = 'test.port'
 } else if (process.env.NODE_ENV === 'dev') {
-  mongoose.connect('mongodb://localhost/translate-dev')
+  mongoose.connect(config.get('dev.database'))
   console.log('CONNECTING TO DEV SERVER...'.blue)
-} else {
-  mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/translate-production')
+  PORT = 'dev.port'
+} else if (process.env.NODE_ENV === 'production') {
+  mongoose.connect(process.env.MONGODB_URI || config.get('production.database'))
   console.log('CONNECTING TO PRODUCTION SERVER...'.blue)
+  PORT = 'production.port'
 }
 mongoose.Promise = global.Promise
 
